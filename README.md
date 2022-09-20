@@ -12,4 +12,4 @@ sudo make install
 sudo make install DESTDIR=/opt/JetBrains/idea-IU-211.7142.45/bin
 ```
 
-This is absed on [this](https://github.com/nuzayets/intellij-fsNotifier-hack). For a good lauth see the discussion [here](https://youtrack.jetbrains.com/issue/IDEA-73309/When-a-folder-is-excluded-from-the-project-is-still-watched-with-inotify) on why this hack is neccessary. 
+This is based on [this](https://github.com/nuzayets/intellij-fsNotifier-hack). For a good laugh see the discussion [here](https://youtrack.jetbrains.com/issue/IDEA-73309/When-a-folder-is-excluded-from-the-project-is-still-watched-with-inotify) on why this hack is necessary. 
