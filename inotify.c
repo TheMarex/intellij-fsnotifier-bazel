@@ -14,6 +14,9 @@
 
 #define WATCH_COUNT_NAME "/proc/sys/fs/inotify/max_user_watches"
 
+// The bazel symlinks will link there so it doesn't matter if we include them
+#define EXCLUDE_PATTERN ".cache/bazel"
+
 #define DEFAULT_SUBDIR_COUNT 5
 
 typedef struct watch_node_str {
@@ -233,8 +236,8 @@ static int walk_tree(unsigned int path_len, watch_node* parent, bool recursive, 
     }
   }
 
-  if (strstr(path_buf, ".staging") != NULL) {
-    userlog(LOG_ERR, "staging ignored: %s", path_buf);
+  if (strstr(path_buf, EXCLUDE_PATTERN) != NULL) {
+    userlog(LOG_ERR, "bazel ignored: %s", path_buf);
     return ERR_IGNORE;
   }
   int id = add_watch(path_len, parent);
